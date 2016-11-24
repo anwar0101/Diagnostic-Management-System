@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+ * Copyright (c) 2008, 2012 Oracle and/or its affiliates.
+ * All rights reserved. Use is subject to license terms.
+ *
+ * This file is available and licensed under the following license:
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ *  - Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *  - Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in
+ *    the documentation and/or other materials provided with the distribution.
+ *  - Neither the name of Oracle Corporation nor the names of its
+ *    contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane id="Profile" minWidth="484.0" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@themeblue.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diagnostic.management.system.RefundController">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <GridPane hgap="5.0" layoutX="18.0" layoutY="32.0" vgap="5.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField fx:id="tfName" prefHeight="31.0" prefWidth="373.0" promptText="Full Name" GridPane.columnIndex="1" />
+                  <Label prefHeight="22.0" prefWidth="46.0" text="Name" />
+                  <Label prefHeight="14.0" prefWidth="108.0" text="Address:" GridPane.rowIndex="1" />
+                  <TextField fx:id="tfAdd1" prefHeight="31.0" prefWidth="373.0" promptText="Address Line 1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label prefHeight="22.0" prefWidth="89.0" text="Address Line 1" GridPane.rowIndex="2" />
+                  <TextField fx:id="tfAdd2" prefHeight="31.0" prefWidth="373.0" promptText="Address Line 1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label prefHeight="22.0" prefWidth="89.0" text="Address Line 2" GridPane.rowIndex="3" />
+                  <TextField fx:id="tfMobile" prefHeight="31.0" prefWidth="373.0" promptText="Mobile Number" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label prefHeight="22.0" prefWidth="63.0" text="Mobile" GridPane.rowIndex="4" />
+                  <TextField fx:id="tfRef" prefHeight="31.0" prefWidth="373.0" promptText="Refference By" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label prefHeight="22.0" prefWidth="89.0" text="Refference" GridPane.rowIndex="5" />
+                  <HBox GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <children>
+                        <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="57.0" text="Xray" />
+                        <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="74.0" text="Citi Scan" />
+                        <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="92.0" text="Blood Group" />
+                        <CheckBox mnemonicParsing="false" text="Blood" />
+                     </children>
+                  </HBox>
+                  <Label prefHeight="22.0" prefWidth="89.0" text="Tests" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+            <Pane layoutX="126.0" layoutY="474.0" />
+            <ImageView fx:id="ivRenterProfile" fitHeight="187.0" fitWidth="184.0" layoutX="519.0" layoutY="30.0" onMouseClicked="#browseImage" pickOnBounds="true" preserveRatio="true" styleClass="imageview" />
+            <HBox layoutX="346.0" layoutY="300.0" spacing="20.0">
+               <children>
+                  <Button fx:id="btnSave" mnemonicParsing="false" onAction="#addPatient" text="Save" />
+                  <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#gotoHome" text="Back" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
