@@ -62,7 +62,7 @@ public class DiagnosticManagementSystem extends Application {
         if (Authonicator.validate(userId, password)) {
             loggedUser = User.getInstance();
             loggedUser.setUsername(userId);
-            gotoHome();
+            gotoManagerHome();
             return true;
         } else {
             return false;
@@ -88,6 +88,17 @@ public class DiagnosticManagementSystem extends Application {
             Logger.getLogger(DiagnosticManagementSystem.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public void gotoManagerHome() {
+        try {
+            ManagerHomeController home = (ManagerHomeController) replaceSceneContent("managerhome.fxml");
+            home.setApp(this);
+        } catch (Exception ex) {
+            Logger.getLogger(DiagnosticManagementSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
     public void gotoEntry() {
         try {
             

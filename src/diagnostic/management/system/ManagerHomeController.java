@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package diagnostic.management.system.admin;
+package diagnostic.management.system;
 
-import diagnostic.management.system.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
@@ -35,7 +34,7 @@ import jiconfont.javafx.IconFontFX;
  *
  * @author anwar
  */
-public class HomeController extends AnchorPane implements Initializable {
+public class ManagerHomeController extends AnchorPane implements Initializable {
     
 
     private RotateTransition rotate;
@@ -86,7 +85,7 @@ public class HomeController extends AnchorPane implements Initializable {
         Color stroke = Color.BLACK;
         Image image = IconFontFX.buildImage(FontAwesome.USER_PLUS, 300, fill, stroke);
 
-        audio = new AudioClip(HomeController.class.getResource("Note5.wav").toString());
+        audio = new AudioClip(ManagerHomeController.class.getResource("Note5.wav").toString());
         
         //set image 
         ivAddRenter.setImage(image);
@@ -94,6 +93,7 @@ public class HomeController extends AnchorPane implements Initializable {
                 IconFontFX.buildImage(FontAwesome.USERS, 300, fill, stroke));
         ivInsert.setImage(
                 IconFontFX.buildImage(FontAwesome.BOOK, 300, fill, stroke));
+        
 
         ivAddRenter.setOnMouseEntered((MouseEvent event) -> {
             animationScale(ivAddRenter, txtAddR,event);
@@ -115,6 +115,9 @@ public class HomeController extends AnchorPane implements Initializable {
         ivProfile.setOnMouseExited((MouseEvent event) -> {
             animationReset(ivProfile, txtViewR);
         });
+
+       
+        //application.crateUserTable();
     }
 
     private void animationScale(ImageView iv, Text txt, MouseEvent event) {
@@ -139,8 +142,9 @@ public class HomeController extends AnchorPane implements Initializable {
         txt.setScaleY(1);
     }
 
+
     @FXML
-    private void gotoViewSummary(MouseEvent event) {
+    private void gotoAddRenter(MouseEvent event) {
         if (application != null) {
             audio.play();
             application.gotoEntry();
@@ -148,12 +152,15 @@ public class HomeController extends AnchorPane implements Initializable {
     }
 
     @FXML
-    private void gotoAddTest(MouseEvent event) {
-        
+    private void gotoProfile(MouseEvent event) {
+        if (application != null) {
+            audio.play();
+            application.gotoView();
+        }
     }
 
     @FXML
-    private void gotoUsersControl(MouseEvent event) {
+    private void gotoInsert(MouseEvent event) {
         
     }
 
